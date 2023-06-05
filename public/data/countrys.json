@@ -1,0 +1,45 @@
+{
+  "type": "CountrysCollection",
+  "countrys": [
+    {
+      "text": "BRA",
+      "size": 1.0,
+      "country": "Brazil",
+      "city": "Fortaleza",
+      "lat": "-3.7319",
+      "lng": "-38.5267"
+    },
+    {
+      "text": "BRA",
+      "size": 1.0,
+      "country": "Brazil",
+      "city": "São Paulo",
+      "lat": "-23.5505",
+      "lng": "-46.6333"
+    },
+    {
+      "text": "PRT",
+      "size": 1.0,
+      "country": "Portugal",
+      "city": "Oeiras",
+      "lat": "38.6916",
+      "lng": "-9.3100"
+    },
+    {
+      "text": "VCT",
+      "size": 1.0,
+      "country": "St. Vincent and the Grenadines",
+      "city": "Kingstown",
+      "lat": "13.1616",
+      "lng": "-61.2248"
+    },
+    {
+      "text": "NLD",
+      "size": 1.0,
+      "country": "Netherlands",
+      "city": "Veldhoven",
+      "lat": "51.4189",
+      "lng": "5.3960"
+    }
+  ]
+}

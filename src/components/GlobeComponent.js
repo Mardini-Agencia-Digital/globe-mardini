@@ -3,12 +3,12 @@ import Globe from "react-globe.gl";
 
 export default function GlobeComponent() {
 
-    const [countries, setCountries] = useState({ features: []});
-    const [countrys, setCountrys] = useState({ countrys: []});
+    // const [countries, setCountries] = useState({ features: []});
+    const [countries, setCountries] = useState({ countries: []});
 
     useEffect(() => {
-        fetch('/data/custom.geojson').then(res => res.json()).then(setCountries);
-        fetch('/data/countrys.json').then(res => res.json()).then(setCountrys);
+        // fetch('/data/custom.geojson').then(res => res.json()).then(setCountries);
+        fetch('/data/countries.json').then(res => res.json()).then(setCountries);
     }, []);
 
     const globeRef = useRef();
@@ -24,30 +24,18 @@ export default function GlobeComponent() {
         <Globe
             ref={globeRef}
             waitForGlobeReady={true}
-            backgroundColor={'#040d21'}
+            // backgroundColor={'#040d21'}
             animateIn={true}
             //Texture
-            globeImageUrl="/assets/color.jpg"
+            globeImageUrl="/assets/earth-night.jpg"
+            backgroundImageUrl="/assets/night-sky.png"
             enableGlobeGlow={true}
-            //Pointed Map
-            hexPolygonsData={countries.features}
-            hexPolygonResolution={3}
-            hexPolygonMargin={0.7}
-            showAtmosphere={true}
-            atmosphereColor={"#FFF"}
-            atmosphereAltitude={0.2 /2}
-            hexPolygonColor={(e) => {
-                if (["PAK"].includes(e.properties.ISO_A3)) {
-                    return "rgba(255,255,255, 1)";
-                } else return "rgba(255,255,255, 0.7)";
-            }}
             //Point Data
-            pointsData={countrys.countrys}
-            pointColor={() => '#FFF'}
-            pointsMerge={true}
-            pointAltitude={0.07}
-            pointRadius={0.50}
-            //
+            labelsData={countries.countries}
+            labelColor={() => 'rgba(255, 165, 0, 0.75)'}
+            labelSize={0.8}
+            labelDotRadius={0.5}
+            labelResolution={2}
         />
     );
 }
